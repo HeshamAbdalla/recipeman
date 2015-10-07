@@ -4,10 +4,8 @@ one:
   name: MyString
   summary: MyText
   description: MyText
-  references: 
 
 two:
   name: MyString
   summary: MyText
   description: MyText
-  references: 
