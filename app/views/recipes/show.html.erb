@@ -1,2 +1,23 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<%= render 'shared/page_title', title: @recipe.name %>
+<div class="row">
+  <div class="container">
+  <div class="col-md-4 pull-right center">
+    <%= gravatar_for @recipe.user, size: 200 %>
+    <p>
+      <h5>Brought to you by: <%= @recipe.user.chefname %></h5>
+    </p>
+  </div>
+</div>
+  <div class="col-md-8">
+    <h5><%= link_to 'Edit Recipe', edit_recipe_path, class: "btn btn-success pull-right" %></h5>
+    <h3> <%= @recipe.summary %></h3>
+    <div class="well">
+      <p>
+        <strong>Steps:</strong>
+      </p>
+      <%= simple_format(@recipe.description) %>
+    </div>
+  </div>
+</div>
+
+<h5><%= link_to 'Return Home Page', recipes_path, class: "btn btn-warning btn-small" %></h5>

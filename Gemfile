@@ -52,6 +52,7 @@ group :development, :test do
   gem "puma"
   gem 'sqlite3'
   gem 'pry'
+  gem 'hirb'
 end
 group :production do
   gem 'pg'

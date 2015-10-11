@@ -4,19 +4,20 @@
 <div class="row">
 
   <div class="col-md-2">
-    <section class="ch  ef_info center">
-      <%= gravatar_for r.user, size: 100 %>
+    <section class="chef_info center">
+      <%= gravatar_for r.user, size:100 %>
       <h5>Chef name: <%= r.user.chefname %> </h5>
     </section>
   </div>
 
   <div class="col-lg-8 well">
-    <h2><%= link_to r.name, "" %></h2>
+    <h2><%= link_to r.name, recipe_path(r) %></h2>
     <h3><%= r.summary %></h3>
     <p>
       <span class='quiet'><small> <%= time_ago_in_words(r.created_at)%> ago</small></span>
     </p>
     <h4><%= r.description %></h4>
   </div>
+  <hr/>
 </div>
 <% end %>
