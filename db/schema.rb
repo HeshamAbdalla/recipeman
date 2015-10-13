@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013033655) do
+ActiveRecord::Schema.define(version: 20151013063306) do
 
   create_table "likes", force: :cascade do |t|
     t.boolean  "like"
@@ -34,11 +34,7 @@ ActiveRecord::Schema.define(version: 20151013033655) do
     t.string   "picture"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "chefname"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
