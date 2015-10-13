@@ -2,7 +2,6 @@
 <hr/>
 <% @recipes.each do |r| %>
 <div class="row">
-
   <div class="col-md-2">
     <section class="chef_info center">
       <%= gravatar_for r.user, size:100 %>
@@ -10,13 +9,16 @@
     </section>
   </div>
 
-  <div class="col-lg-8 well">
+  <div class="col-lg-6 well">
     <h2><%= link_to r.name, recipe_path(r) %></h2>
     <h3><%= r.summary %></h3>
     <p>
       <span class='quiet'><small> <%= time_ago_in_words(r.created_at)%> ago</small></span>
     </p>
     <h4><%= r.description %></h4>
+  </div>
+  <div class="col-md-4">
+    <%= image_tag(r.picture.url, size: "250x150", class: "gravatar") if r.picture? %>
   </div>
   <hr/>
 </div>
