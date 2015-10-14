@@ -51,14 +51,14 @@ gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'fog', '1.23.0'
+gem 'rails_12factor'
+
 group :development, :test do
   gem "better_errors"
   gem "puma"
   gem 'sqlite3'
   gem 'pry'
   gem 'hirb'
-end
-group :production do
   gem 'pg'
-  gem 'rails_12factor'
 end
