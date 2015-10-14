@@ -55,7 +55,6 @@ gem 'fog', '1.23.0'
 
 group :development, :test do
   gem "better_errors"
-  gem "puma"
   gem 'sqlite3'
   gem 'pry'
   gem 'hirb'
@@ -64,4 +63,6 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'pg'
+  gem 'bcrypt', '~> 3.1.7'
+  gem "puma"
 end
