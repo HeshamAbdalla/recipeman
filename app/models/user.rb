@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  attr_accesor :password
   has_many :recipes
   has_many :likes
   before_save { self.email = email.downcase}
