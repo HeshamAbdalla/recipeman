@@ -210,7 +210,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt (~> 3.1.10)
   better_errors
   bootstrap-sass (~> 3.3.5)
   bootstrap-will_paginate (= 0.0.10)
