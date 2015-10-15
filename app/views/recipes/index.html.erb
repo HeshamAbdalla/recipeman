@@ -21,8 +21,12 @@
   <div class="col-lg-6 well">
     <h2><%= link_to r.name, recipe_path(r) %></h2>
     <h3><%= r.summary %></h3>
-    <p>Style: <%= render r.styles %> </p>
-    <p>Ingerdient: <%= render r.ingredients %> </p>
+    <% if r.styles.any? %>
+      <p>Style: <%= render r.styles %> </p>
+    <% end %>
+    <% if r.ingredients.any? %>
+      <p>Ingerdient: <%= render r.ingredients %> </p>
+    <% end %>
     <p>
       <span class='quiet'><small> Created: <%= time_ago_in_words(r.created_at)%> ago, </small></span>
       <span class='quiet'><small> updated: <%= time_ago_in_words(r.updated_at)%> ago</small></span>
