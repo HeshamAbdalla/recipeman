@@ -19,5 +19,4 @@ class ApplicationController < ActionController::Base
       redirect_to recipes_path
     end
   end
-
 end
