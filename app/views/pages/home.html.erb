@@ -1,28 +1,231 @@
-<div class="center jumbotron">
-  <h1>Welcome to Recipeman</h1>
-  <h2>This is the home page</h2>
-  <p><%= link_to "Sign up now!",register_path,class: "btn btn-lg btn-success" %></p>
-</div>
-<div class="row">
-  <div class="col-xs-6 col-md-4">
-    <h3 class="midrow">
-      View Recipes as Guest User
-    </h3>
-    <h2 class="left"> Browse and view recipes as a guest and sign up later</h2>
-    <p><%= link_to "Browse Recipe Listings",recipes_path, class: "btn btn-warning btn-small" %></p>
-  </div>
-  <div class="col-xs-6 col-md-4">
-    <h3 class="midrow">
-      View Recipes as Guest User
-    </h3>
-    <h2 class="left"> Browse and view recipes as a guest and sign up later</h2>
-    <p><%= link_to "Browse Recipe Listings",recipes_path, class: "btn btn-warning btn-small" %></p>
-  </div>
-  <div class="col-xs-6 col-md-4">
-    <h3 class="midrow">
-      View Recipes as Guest User
-    </h3>
-    <h2 class="left"> Browse and view recipes as a guest and sign up later</h2>
-    <p><%= link_to "Browse Recipe Listings",recipes_path, class: "btn btn-warning btn-small" %></p>
-  </div>
-</div>
+      <header>
+        <nav>
+          <div class="row">
+            <%= image_tag("logo.jpg",{class: "logo"})%>
+            <%= image_tag("logo.jpg",{class: "logo-sticky"})%>
+            <ul class="main-nav js--main-nav">
+              <li><a href="#features">Make it Home</a></li>
+              <li><a href="#steps">How it works</a></li>
+              <li><a href="#chefs">Top Chefs</a></li>
+              <li><a href="#sign-up">Sign Up</a></li>
+            </ul>
+            <a class="mobile-nav-icon js--nav-icon"><i class="ion-drag"></i></a>
+          </div>
+        </nav>
+
+        <div class="hero-text-box">
+          <h1>Make a new recipe or choose one!</h1>
+          <a class= "btn full-btn  js--scroll-to-signup" href="#"> Sign up now! </a>
+          <a  class= "btn ghost-btn js--scroll-to-start" href="#" >  Show me more  </a>
+        </div>
+      </header>
+
+      <section class="section-features js--section-features" id="features">
+        <div class="row">
+          <h2>make it at home</h2>
+          <p class="long-copy">
+             Easily find your favorit food, site let members to create every type of recipe you could want,
+             from decadent desserts to authentic cuisines.
+          </p>
+        </div>
+
+        <div class="row js--wp-1">
+          <div class="col span-1-of-3 box">
+            <li class="ion-ios-heart-outline icon-big"></li>
+            <h3>healthy food</h3>
+            <p>
+              don't think too much just start coocking your healthy dinner.
+            </p>
+          </div>
+          <div class="col span-1-of-3 box">
+            <li class="ion-ios-search icon-big"></li>
+            <h3>Search for recipes</h3>
+            <p>
+              Just browse the recipes even without login in.
+              It's as simple as that.
+            </p>
+          </div>
+          <div class="col span-1-of-3 box">
+            <li class="ion-ios-people-outline icon-big"></li>
+            <h3>join the community</h3>
+            <p>
+              create a recipe of your own for thosand of users to use and rate it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-steps" id="steps">
+        <div class="row">
+          <h2>How it works is simple as 1, 2, 3</h2>
+        </div>
+        <div class="row">
+          <div class="col span-1-of-2 steps-box">
+            <%= image_tag("2.jpg", { class: "steps-img js--wp-2"} ) %>
+          </div>
+          <div class="col span-1-of-2 steps-box">
+            <div class="works-step">
+              <div>1</div>
+              <p>Create an account today and enjoy all the recipes.</p>
+            </div>
+            <div class="works-step">
+              <div>2</div>
+              <p> Create your very first recipe and add an image of the food.</p>
+            </div>
+            <div class="works-step">
+              <div>3</div>
+              <p>Share it with  your friends and the world and other members rating your recipes !</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-topchefs" id="chefs">
+        <div class="row">
+          <h2> Top chefs of the month </h2>
+        </div>
+        <div class="row js--wp-3">
+          <div class="col span-1-of-3 box">
+            <h3>Chef number 1</h3>
+            <%= gravatar_for(@users.find_by(id: 1),  class: "chef-img")%>
+            <div class="chef-feature">
+              <li class="ion-ios-star icon-small"></li>
+              <%= @users.find_by(id: 1).chefname %>
+            </div>
+            <div class="chef-feature">
+              <li class="ion-ios-nutrition icon-small"></li>
+              <%= @users.find_by(id: 1).recipes.first.name %>
+            </div>
+            <div class="chef-feature">
+              <li class="ion-ios-person icon-small"></li>
+              <%= link_to "Chef Profile", recipes_path(@users.find_by(id: 1))%>
+            </div>
+          </div>
+          <div class="col span-1-of-3 box">
+            <h3>Chef number 2</h3>
+            <%= gravatar_for(@users.find_by(id: 2), class: "chef-img") %>
+            <div class="chef-feature">
+              <li class="ion-ios-star icon-small"></li>
+              <%= @users.find_by(id:2).chefname %>
+            </div>
+            <div class="chef-feature">
+              <li class="ion-ios-nutrition icon-small"></li>
+                <%= @users.find_by(id: 2).recipes.first.name %>
+            </div>
+            <div class="chef-feature">
+              <li class="ion-ios-person icon-small"></li>
+              <%= link_to "Chef Profile", recipes_path(@users.find_by(id: 2))%>
+            </div>
+          </div>
+          <div class="col span-1-of-3 box">
+            <h3>Chef number 3</h3>
+              <%= gravatar_for(@users.find_by(id: 5), class: "chef-img" ) %>
+            <div class="chef-feature">
+              <li class="ion-ios-star icon-small"></li>
+                <%= @users.find_by(id: 7).chefname %>
+              </div>
+            <div class="chef-feature">
+              <li class="ion-ios-nutrition icon-small"></li>
+                <%= @users.find_by(id: 1).recipes.second.name %>
+              </div>
+              <div class="chef-feature">
+                <li class="ion-ios-person icon-small"></li>
+                <%= link_to "Chef Profile", recipes_path(@users.find_by(id: 3))%>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <section class="section-testimonials">
+        <div class="row">
+          <h2> What users say about RecipeChef </h2>
+        </div>
+        <div class="row">
+          <div class="col span-1-of-3">
+            <blockquote>
+              RecipeChef is so awesome that I started creating my own recipes,
+              awesome place I love the commuinty.
+              <cite><%= image_tag("user1.jpg")%>Taylor Henry</cite>
+            </blockquote>
+          </div>
+          <div class="col span-1-of-3">
+            <blockquote>
+              I was just looking for recipes to make at home,
+              And I found RecipeChef and never used anything else ever since.
+              <cite><%= image_tag("user2.jpg")%>Rachel McCartney</cite>
+            </blockquote>
+          </div>
+          <div class="col span-1-of-3">
+            <blockquote>
+              Nothing to say but just really cool website that I use daily for a new recipe,
+              It has so many different recipes.
+              <cite><%= image_tag("user3.jpg")%> Ashley Taylor</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-options js--section-options" id="sign-up">
+        <div class="row">
+          <h2>Start eating healthy today</h2>
+        </div>
+        <div class="row">
+          <div class="col span-1-of-3">
+            <div class="option-box js--wp-4">
+              <div>
+                <h3>Signup</h3>
+                <p class="first-p">Create a recipe now</p>
+                <p class="second-p"> Become a top chef in our website </p>
+              </div>
+              <div>
+                <ul>
+                  <li><li class="ion-ios-checkmark-empty icon-small"></li>Create recipes</li>
+                  <li><li class="ion-ios-checkmark-empty icon-small"></li>Rate other recipes</li>
+                  <li><li class="ion-ios-checkmark-empty icon-small"></li>It's free of charge</li>
+                </ul>
+              </div>
+              <div>
+                <%= link_to "Sign up", register_path, class: "btn full-btn" %>
+              </div>
+            </div>
+          </div>
+          <div class="col span-1-of-3">
+            <div class="option-box">
+              <div>
+                <h3>Browse recipes</h3>
+                <p class="first-p">Browse Recipes no Sign in</p>
+                <p class="second-p"> Enjoy free recipes instructions as a guest </p>
+              </div>
+              <div>
+                <ul>
+                  <li><li class="ion-ios-close-empty icon-small"></li>Create recipes</li>
+                  <li><li class="ion-ios-checkmark-empty icon-small"></li>Browse recipes</li>
+                  <li><li class="ion-ios-checkmark-empty icon-small"></li>It's free of charge </li>
+                </ul>
+              </div>
+              <div>
+                <%= link_to "Recipes", recipes_path, class: "btn ghost-btn" %>
+              </div>
+            </div>
+          </div>
+          <div class="col span-1-of-3">
+            <div class="option-box">
+              <div>
+                <h3>Sign in</h3>
+                <p class="first-p">Already a Recipe Chef?</p>
+                <p class="second-p"> Maybe you are the next top chef? </p>
+              </div>
+              <div>
+                <ul>
+                  <li><li class="ion-ios-checkmark-empty icon-small"></li>Create recipes</li>
+                  <li><li class="ion-ios-checkmark-empty icon-small"></li>Rate other recipes</li>
+                  <li><li class="ion-ios-checkmark-empty icon-small"></li>It's free of charge </li>
+                </ul>
+              </div>
+              <div>
+                <%= link_to "Sign in", login_path, class: "btn ghost-btn" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

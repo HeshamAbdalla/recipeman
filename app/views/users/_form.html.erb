@@ -1,16 +1,42 @@
-<%= render 'shared/errors', obj: @user %>
+<section class="signup-section">
 <div class="row">
-  <div class="well col-md-8 col-md-offset-2">
-    <%= form_for @user do |u| %>
-    <%= u.label :ChefName %>
-    <%= u.text_field :chefname %>
-
-    <%= u.label :Email %>
-    <%= u.email_field :email %>
-
-    <%= u.label :password %>
-    <%= u.password_field :password %>
-    <%= u.submit(@user.new_record? ? 'Register' : 'Edit Profile', class: "btn btn-success") %>
-    <% end %>
-  </div>
+  <h2>Sign up</h2>
 </div>
+<div class="row">
+    <%= form_for @user, :html => {class: "form"} do |u| %>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <%= u.label :ChefName %>
+        </div>
+        <div class="col span-2-of-3">
+          <%= u.text_field :chefname, :placeholder => "Your name", required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <%= u.label :Email %>
+        </div>
+        <div class="col span-2-of-3">
+          <%= u.email_field :email, :placeholder => "Your email", required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <%= u.label :password %>
+        </div>
+        <div class="col span-2-of-3">
+          <%= u.password_field :password, :placeholder => "Your Password", required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <label>&nbsp;</label>
+        </div>
+        <div class="col span-2-of-3">
+          <%= u.submit(@user.new_record? ? 'Register' : 'Edit Profile') %>
+          <%= link_to "Cancel", root_path, class: "btn ghost-btn" %>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</section>
