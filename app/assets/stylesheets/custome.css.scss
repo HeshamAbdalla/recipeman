@@ -1,6 +1,7 @@
 /* ------------------------------ */
         /* BASIC SETUP */
 /* ------------------------------ */
+@import "bootstrap-sprockets";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,300italic);
 @import "animate";
 @import "queries";
@@ -41,7 +42,7 @@ html {
 /* ------------------------------ */
 
 
-@import "_ionicons-variables";
+@import "../../../vendor/assets/stylesheets/_ionicons-variables";
 @import "../../../vendor/assets/stylesheets/scss/*";
 
 @font-face {
